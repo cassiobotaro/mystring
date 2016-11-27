@@ -1,9 +1,10 @@
 #ifndef new
-#define new {.length=length, .equalsIgnoreCase=equalsIgnoreCase, .substring=substring,.toUpperCase=toUpperCase, .toLowerCase=toLowerCase, .replace=replace, .lastIndexOf=lastIndexOf, .firstIndexOf=firstIndexOf};
+#define new {.equals=equals, .length=length, .equalsIgnoreCase=equalsIgnoreCase, .substring=substring,.toUpperCase=toUpperCase, .toLowerCase=toLowerCase, .replace=replace, .lastIndexOf=lastIndexOf, .firstIndexOf=firstIndexOf};
 #endif
 
 #include "mystring.c"
 
+int equals(char* str1, char* str2);
 int length(char *nome);
 int firstIndexOf(char *frase,char i);
 int lastIndexOf(char *frase,char i);
@@ -14,6 +15,7 @@ char *substring(char *nome, int posInicial, int posFinal);
 int equalsIgnoreCase(char *string, char *string_aux);
 
 typedef struct {
+    int   (*equals)(char*, char*);
     int   (*length)(char*);
     int   (*equalsIgnoreCase)(char*, char*);
     char* (*substring)(char*, int, int);

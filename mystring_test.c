@@ -46,6 +46,23 @@ void TestLastIndexOfNotFound(String s){
     }
 }
 
+void TestEqualsEquals(String s){
+    int expected = TRUE;
+    int returned = s.equals("teste", "teste");
+    if (returned != expected) {
+        printf("TestEqualsEquals: expected %d but found %d",
+               expected, returned);
+    }
+}
+
+void TestEqualsNotEquals(String s){
+    int expected = FALSE;
+    int returned = s.equals("testa", "teste");
+    if (returned != expected) {
+        printf("TestEqualsNotEquals: expected %d but found %d",
+               expected, returned);
+    }
+}
 
 int main(int argc, char *argv[])
 {
@@ -55,6 +72,8 @@ int main(int argc, char *argv[])
     TestFirstIndexOfNotFound(s);
     TestLastIndexOfFound(s);
     TestLastIndexOfNotFound(s);
+    TestEqualsEquals(s);
+    TestEqualsNotEquals(s);
     return 0;
 }
 
