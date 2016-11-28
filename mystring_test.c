@@ -137,6 +137,7 @@ int main(int argc, char *argv[])
     TestEqualsIgnoreCaseEquals(s);
     TestEqualsIgnoreCaseNotEquals(s);
     TestReplace(s);
+    TestSubstring(s);
     return 0;
 }
 
