@@ -102,6 +102,16 @@ void TestEqualsIgnoreCaseNotEquals(String s){
     }
 }
 
+void TestReplace(String s){
+    char* expected = "bell";
+    char returned[] = "ball";
+    s.replace(returned, 'a', 'e');
+    if (strcmp(expected, returned)) {
+        printf("TestReplace: expected %s but found %s",
+                expected, returned);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     String s = new;
@@ -116,6 +126,7 @@ int main(int argc, char *argv[])
     TestToLowerCase(s);
     TestEqualsIgnoreCaseEquals(s);
     TestEqualsIgnoreCaseNotEquals(s);
+    TestReplace(s);
     return 0;
 }
 
