@@ -112,6 +112,16 @@ void TestReplace(String s){
     }
 }
 
+
+void TestSubstring(String s){
+    char* expected = "tes";
+    char* returned = s.substring("teste", 0, 3);
+    if (strcmp(expected, returned)) {
+        printf("Testsubstring: expected %s but found %s",
+                expected, returned);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     String s = new;
