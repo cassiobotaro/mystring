@@ -6,7 +6,7 @@ void TestLength(String s){
     int returned = s.length("teste");
     if (returned != expected) {
         printf("TestLength: expected %d but found %d",
-               expected, returned);
+                expected, returned);
     }
 }
 
@@ -15,7 +15,7 @@ void TestFirstIndexOfFound(String s){
     int returned = s.firstIndexOf("teste", 's');
     if (returned != expected) {
         printf("TestFirstIndexOfFound: expected %d but found %d",
-               expected, returned);
+                expected, returned);
     }
 }
 
@@ -24,7 +24,7 @@ void TestFirstIndexOfNotFound(String s){
     int returned = s.firstIndexOf("teste", 'i');
     if (returned != expected) {
         printf("TestFirstIndexOfNotFound: expected %d but found %d",
-               expected, returned);
+                expected, returned);
     }
 }
 
@@ -33,7 +33,7 @@ void TestLastIndexOfFound(String s){
     int returned = s.lastIndexOf("teste", 't');
     if (returned != expected) {
         printf("TestLastIndexOfFound: expected %d but found %d",
-               expected, returned);
+                expected, returned);
     }
 }
 
@@ -42,7 +42,7 @@ void TestLastIndexOfNotFound(String s){
     int returned = s.lastIndexOf("teste", 'i');
     if (returned != expected) {
         printf("TestLastIndexOfNotFound: expected %d but found %d",
-               expected, returned);
+                expected, returned);
     }
 }
 
@@ -51,7 +51,7 @@ void TestEqualsEquals(String s){
     int returned = s.equals("teste", "teste");
     if (returned != expected) {
         printf("TestEqualsEquals: expected %d but found %d",
-               expected, returned);
+                expected, returned);
     }
 }
 
@@ -60,7 +60,27 @@ void TestEqualsNotEquals(String s){
     int returned = s.equals("testa", "teste");
     if (returned != expected) {
         printf("TestEqualsNotEquals: expected %d but found %d",
-               expected, returned);
+                expected, returned);
+    }
+}
+
+void TestToUpperCase(String s){
+    char* expected = "BALL";
+    char returned[] = "ball";
+    s.toUpperCase(returned);
+    if (strcmp(expected, returned)) {
+        printf("TestToUpperCase: expected %s but found %s",
+                expected, returned);
+    }
+}
+
+void TestToLowerCase(String s){
+    char* expected = "ball";
+    char returned[] = "BALL";
+    s.toLowerCase(returned);
+    if (strcmp(expected, returned)) {
+        printf("TestToLowerCase: expected %s but found %s",
+                expected, returned);
     }
 }
 
@@ -74,6 +94,8 @@ int main(int argc, char *argv[])
     TestLastIndexOfNotFound(s);
     TestEqualsEquals(s);
     TestEqualsNotEquals(s);
+    TestToUpperCase(s);
+    TestToLowerCase(s);
     return 0;
 }
 
