@@ -84,6 +84,24 @@ void TestToLowerCase(String s){
     }
 }
 
+void TestEqualsIgnoreCaseEquals(String s){
+    int expected = TRUE;
+    int returned = s.equalsIgnoreCase("teste", "TESTE");
+    if (returned != expected) {
+        printf("TestEqualsIgnoreCaseEquals: expected %d but found %d",
+                expected, returned);
+    }
+}
+
+void TestEqualsIgnoreCaseNotEquals(String s){
+    int expected = FALSE;
+    int returned = s.equals("TESTA", "teste");
+    if (returned != expected) {
+        printf("TestEqualsIgnoreCaseNotEquals: expected %d but found %d",
+                expected, returned);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     String s = new;
@@ -96,6 +114,8 @@ int main(int argc, char *argv[])
     TestEqualsNotEquals(s);
     TestToUpperCase(s);
     TestToLowerCase(s);
+    TestEqualsIgnoreCaseEquals(s);
+    TestEqualsIgnoreCaseNotEquals(s);
     return 0;
 }
 
