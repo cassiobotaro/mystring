@@ -1,4 +1,4 @@
-test:mystring_test.o
+test:clean mystring_test.o
 	gcc -o test mystring_test.o
 	./test
 	rm test
