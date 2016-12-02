@@ -5,20 +5,20 @@
 #include "mystring.c"
 
 int equals(char* str1, char* str2);
-int length(char *nome);
-int firstIndexOf(char *frase,char i);
-int lastIndexOf(char *frase,char i);
+int length(char *str);
+int firstIndexOf(char *str,char i);
+int lastIndexOf(char *str,char i);
 void toUpperCase(char *str);
 void toLowerCase(char *str);
-void replace(char *string, char str1, char str2);
-char *substring(char *nome, int posInicial, int posFinal);
+void replace(char *str, char o, char n);
+void substring(char *str, char *sub, int ini, int end);
 int equalsIgnoreCase(char *string, char *string_aux);
 
 typedef struct {
     int   (*equals)(char*, char*);
     int   (*length)(char*);
     int   (*equalsIgnoreCase)(char*, char*);
-    char* (*substring)(char*, int, int);
+    void  (*substring)(char*, char*, int, int);
     void  (*toUpperCase)(char*);
     void  (*toLowerCase)(char*);
     void  (*replace)(char*, char, char);
